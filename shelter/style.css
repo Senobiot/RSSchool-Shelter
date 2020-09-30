@@ -111,7 +111,7 @@ header {
         background-color: #F1CDB3;
         width: 100%;
         height: 3px;
-        bottom: -6px;
+        bottom: -7px;
         left: 0;
         -webkit-transform: scale(0);
             -ms-transform: scale(0);
@@ -234,3 +234,128 @@ h3 {
     width: 430px;
     color: #4C4C4C;
     margin-bottom: 25px; }
+
+.friends {
+  height: 877px;
+  padding-top: 80px;
+  background-color: #F6F6F6; }
+  .friends h3 {
+    width: 405px;
+    height: 90px;
+    margin: 0 auto 60px;
+    text-align: center;
+    padding-left: 3px; }
+  .friends__slider {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 435px;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    margin-bottom: 60px; }
+    .friends__slider_arrow {
+      border: 2px solid #F1CDB3;
+      width: 52px;
+      height: 52px;
+      border-radius: 100px;
+      cursor: pointer;
+      background: url("assets/images/arrow.png") no-repeat 50%;
+      -webkit-transition: 0.2s;
+      -o-transition: 0.2s;
+      transition: 0.2s; }
+      .friends__slider_arrow:active {
+        -webkit-box-shadow: inset 0px 0px 7px 2px #F1CDB3;
+                box-shadow: inset 0px 0px 7px 2px #F1CDB3;
+        -webkit-transform: translate(2px, 2px);
+            -ms-transform: translate(2px, 2px);
+                transform: translate(2px, 2px); }
+      .friends__slider_arrow:first-child {
+        background-image: url("assets/images/arrow_r.png"); }
+    .friends__slider_viewport {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 990px;
+      margin: 0 53px; }
+  .friends .button {
+    width: 261px;
+    height: 52px;
+    margin: 0 auto;
+    -webkit-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s; }
+    .friends .button:active {
+      -webkit-box-shadow: inset 0px 0px 7px 2px #000;
+              box-shadow: inset 0px 0px 7px 2px #000; }
+
+.slide {
+  width: 270px;
+  height: 435px;
+  background-color: #FAFAFA;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .slide:hover {
+    -webkit-box-shadow: 0px 0px 50px 7px #cacaca;
+            box-shadow: 0px 0px 50px 7px #cacaca; }
+  .slide img {
+    width: 270px;
+    height: 270px; }
+  .slide_title {
+    margin: 30px 0;
+    color: #545454;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    font-family: "GeorgiaRegular", sans-serif;
+    font-weight: 400; }
+  .slide_button {
+    width: 187px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    margin: 0 auto;
+    border-radius: 100px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: #292929;
+    letter-spacing: 0.06em;
+    font-size: 17px;
+    line-height: 130%;
+    font-family: "GeorgiaRegular", sans-serif;
+    font-weight: 400;
+    -webkit-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s; }
+    .slide_button:active {
+      -webkit-box-shadow: inset 0px 0px 7px 2px #F1CDB3;
+              box-shadow: inset 0px 0px 7px 2px #F1CDB3;
+      -webkit-transform: translate(2px, 2px);
+          -ms-transform: translate(2px, 2px);
+              transform: translate(2px, 2px); }
