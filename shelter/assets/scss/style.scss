@@ -1,5 +1,26 @@
 @import "fonts.scss";
 @import "../css/reset";
-.main-page {
-	color: red;
+
+body {
+	background-color: #E5E5E5;
 }
+
+header {
+	position: absolute;
+	width: 1200px;
+	left: calc(50% - 800px);
+}
+.logo {
+	&_subtitle {}
+}
+.main-page {
+	margin: 0 auto;
+	padding-top: 343px;
+	width: 1280px;
+	height: 908px;
+	background: url("assets/images/bg_main.jpg") no-repeat 50%/contain;
+}
+.regular {
+	font-family: 'GeorgiaRegular';
+}
+

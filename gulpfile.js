@@ -18,45 +18,45 @@ var gulp = require('gulp'),
 
 
 // gulp.task('csscomb', function() {
-// 	return gulp.src('app/css/main.css')
+// 	return gulp.src('shelter/css/main.css')
 // 		.pipe(csscomb())
 // 		.pipe(gulp.dest('dist/css'));
 // });
 
 // gulp.task('uncss', function() {
-//     return gulp.src('app/css/main.css')
+//     return gulp.src('shelter/css/main.css')
 //         .pipe(uncss({
-//             html: ['app/index.html']
+//             html: ['shelter/index.html']
 //         }))
 //         .pipe(gulp.dest('dist/css'));
 // });
 
 // gulp.task('jsmin', function () {
 // 	return pipeline(
-// 		gulp.src('app/js/*.js'),
+// 		gulp.src('shelter/js/*.js'),
 // 		uglify(),
 // 		gulp.dest('dist/js')
 // 	);
 // });
 
 gulp.task('fonts', function() {
-	return gulp.src('assets/fonts/**/*')
+	return gulp.src('shelter/assets/fonts/**/*')
 		.pipe(gulp.dest('dist/fonts'))
 
 })
 
 gulp.task('awesomecss', function() {
-	return gulp.src('assets/css/font-awesome.min.css')
+	return gulp.src('shelter/assets/css/font-awesome.min.css')
 		.pipe(gulp.dest('dist/css'))
 })
 
 gulp.task('libs', function() {
-	return gulp.src('assets/libs/*')
+	return gulp.src('shelter/assets/libs/*')
 		.pipe(gulp.dest('dist/libs'))
 })
 
 gulp.task("imgmin", function () {
-	return gulp.src("assets/images/*.*")
+	return gulp.src("shelter/assets/img/*.*")
 		.pipe(imagemin([
 				imagemin.gifsicle({interlaced: true}),
 				imagemin.mozjpeg({quality: 75, progressive: true}),
@@ -73,7 +73,7 @@ gulp.task("imgmin", function () {
 
 
 gulp.task("jsmin", function () {
-	return gulp.src("pages/main/*.js")
+	return gulp.src("shelter/assets/js/*.js")
 		// .pipe(rename(function (path) {
 		// path.basename += ".min";
 		//  }))
@@ -82,13 +82,13 @@ gulp.task("jsmin", function () {
 });
 
 gulp.task('htmlmin', () => {
-	return gulp.src('pages/main/*.html')
+	return gulp.src('shelter/*.html')
 		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('cssmin', function () {
-	return gulp.src('pages/main/style.css')
+	return gulp.src('shelter/css/style.css')
 		.pipe(csso({
 			restructure: false,
 			sourceMap: true,
@@ -98,10 +98,10 @@ gulp.task('cssmin', function () {
 });
 
 gulp.task('scss', function () {
-	return gulp.src('assets/scss/**/*.scss')
+	return gulp.src('shelter/assets/scss/**/*.scss')
 		.pipe(scss())
 		.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-		.pipe(gulp.dest('pages/main/'))
+		.pipe(gulp.dest('shelter'))
 		.pipe(browserSync.reload({stream:true}))
 });
 
@@ -109,25 +109,25 @@ gulp.task('scss', function () {
 gulp.task('browser-sync', function() {
 	browserSync({
 		server:{
-			baseDir:'app'
+			baseDir:'shelter'
 		},
 		notify:false
 	});
 });
 gulp.task('scripts', function (){
-	return gulp.src(['pages/main/common.js', 'assets/libs/**/*.js'])
+	return gulp.src(['shelter/assets/js/common.js', 'shelter/assets/libs/**/*.js'])
 	.pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('code', function(){
-	return gulp.src('pages/main/*.html')
+	return gulp.src('shelter/*.html')
 	.pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('watch', function() {
-	gulp.watch('assets/scss/**/*.scss', gulp.parallel('scss'));
-	gulp.watch('pages/main/index.html', gulp.parallel('code'));
-	gulp.watch(['pages/main/common.js', 'assets/libs/**/*.js'], gulp.parallel('scss'));
+	gulp.watch('shelter/assets/scss/**/*.scss', gulp.parallel('scss'));
+	gulp.watch('shelter/*.html', gulp.parallel('code'));
+	gulp.watch(['shelter/assets/js/common.js', 'shelter/assets/libs/**/*.js'], gulp.parallel('scripts'));
 });
 gulp.task('default', gulp.parallel('scss', 'browser-sync', 'watch'));
 gulp.task('dist', gulp.parallel('imgmin', 'jsmin', 'htmlmin', 'cssmin', 'fonts', 'awesomecss', 'libs'));

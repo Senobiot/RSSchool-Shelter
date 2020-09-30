@@ -1,4 +1,9 @@
 @charset "UTF-8";
+@font-face {
+  font-family: 'GeorgiaRegular';
+  src: url("assets/fonts/GeorgiaRegular.eot");
+  src: url("assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("assets/fonts/GeorgiaRegular.woff") format("woff"), url("assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
+
 /*Обнуление*/
 * {
   padding: 0;
@@ -58,5 +63,21 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
 /*--------------------*/
+body {
+  background-color: #E5E5E5; }
+
+header {
+  position: absolute;
+  width: 1200px;
+  left: -webkit-calc(50% - 800px);
+  left: calc(50% - 800px); }
+
 .main-page {
-  color: red; }
+  margin: 0 auto;
+  padding-top: 343px;
+  width: 1280px;
+  height: 908px;
+  background: url("assets/images/bg_main.jpg") no-repeat 50%/contain; }
+
+.regular {
+  font-family: 'GeorgiaRegular'; }
