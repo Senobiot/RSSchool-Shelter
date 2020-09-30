@@ -146,7 +146,6 @@ header {
     padding-left: 4px; }
 
 h2 {
-  margin-left: 40px;
   font-size: 44px;
   font-family: "GeorgiaRegular", sans-serif;
   color: #fff;
@@ -165,12 +164,15 @@ h2 {
   .main-page p {
     width: 460px;
     height: 72px;
-    margin-left: 40px;
     color: #CDCDCD;
     margin-bottom: 41px; }
   .main-page .button {
     width: 207px;
     height: 52px; }
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto; }
 
 .regular {
   font-size: 15px;
@@ -198,10 +200,37 @@ h2 {
   line-height: 130%;
   letter-spacing: 0.06em;
   border-radius: 100px;
-  margin-left: 40px; }
+  -webkit-transition: 0.075s;
+  -o-transition: 0.075s;
+  transition: 0.075s; }
   .button:active {
     -webkit-box-shadow: inset 0px 0px 2px 2px black;
             box-shadow: inset 0px 0px 2px 2px black;
     -webkit-transform: translate(2px, 2px);
         -ms-transform: translate(2px, 2px);
             transform: translate(2px, 2px); }
+
+section {
+  width: 1280px;
+  margin: 0 auto; }
+
+h3 {
+  font-family: "GeorgiaRegular", sans-serif;
+  font-weight: 400;
+  font-size: 35px;
+  letter-spacing: 0.06em;
+  line-height: 130%;
+  color: #545454; }
+
+.about {
+  height: 588px;
+  padding: 94px 215px 0 635px;
+  background: #fff url("assets/images/about-pets.png") no-repeat 215px 80px; }
+  .about h3 {
+    width: 370px;
+    height: 90px;
+    margin-bottom: 25px; }
+  .about .regular {
+    width: 430px;
+    color: #4C4C4C;
+    margin-bottom: 25px; }
