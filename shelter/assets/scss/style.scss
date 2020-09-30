@@ -264,3 +264,49 @@ h3 {
 			}
 	}
 }
+
+//	<!-- ======================section Help======================== -->
+
+.help {
+	width: 1280px;
+	height: 611px;
+	padding-top: 80px;
+	background-color: #fff;
+	h3 {
+		width: 312px;
+		margin: 1px auto 59px;
+		padding-left: 2px;
+		text-align: center;
+	}
+}
+.iconsBlock {
+	width: 1026px;
+	height: 113px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	&:last-child {
+		margin-top: 55px;
+		padding: 0 84px;
+	}
+	&__tile {
+		&_icon {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 30px;
+			img {
+				width: 60px;
+				height: 60px;
+			}
+
+		}
+		&_title {
+			color: #545454;
+			font-size: 20px;
+			line-height: 115%;
+			letter-spacing: 0.06em;
+			font-family: $gr;
+			text-align: center;
+		}
+	}
+}

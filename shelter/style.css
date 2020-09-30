@@ -359,3 +359,50 @@ h3 {
       -webkit-transform: translate(2px, 2px);
           -ms-transform: translate(2px, 2px);
               transform: translate(2px, 2px); }
+
+.help {
+  width: 1280px;
+  height: 611px;
+  padding-top: 80px;
+  background-color: #fff; }
+  .help h3 {
+    width: 312px;
+    margin: 1px auto 59px;
+    padding-left: 2px;
+    text-align: center; }
+
+.iconsBlock {
+  width: 1026px;
+  height: 113px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .iconsBlock:last-child {
+    margin-top: 55px;
+    padding: 0 84px; }
+  .iconsBlock__tile_icon {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 30px; }
+    .iconsBlock__tile_icon img {
+      width: 60px;
+      height: 60px; }
+  .iconsBlock__tile_title {
+    color: #545454;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    font-family: "GeorgiaRegular", sans-serif;
+    text-align: center; }
