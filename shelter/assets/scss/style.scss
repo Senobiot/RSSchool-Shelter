@@ -1,6 +1,9 @@
 @import "fonts.scss";
 @import "../css/reset";
 
+$ar: 'Arial', sans-serif;
+$gr: 'GeorgiaRegular', sans-serif;
+
 body {
 	background-color: #E5E5E5;
 }
@@ -8,10 +11,79 @@ body {
 header {
 	position: absolute;
 	width: 1200px;
-	left: calc(50% - 800px);
+	height: 60px;
+	top: 60px;
+	left: calc(50% - 600px);
+	display: flex;
+	justify-content: space-between;
+	ul {
+		padding-top: 16px;
+		display: flex;
+		justify-content: space-between;
+		width: 443px;
+		.header_active {
+				color: #FAFAFA;
+				&:after {
+					transform: scale(1);
+				}
+			}
+		a {
+			color: #CDCDCD;
+			font-family: $ar;
+			line-height: 24px;
+			font-size: 15px;
+			font-weight: 400;
+			position: relative;
+			&:after {
+				position: absolute;
+				content: '';
+				background-color: #F1CDB3;
+				width: 100%;
+				height: 3px;
+				bottom: -6px;
+				left: 0;
+				transform: scale(0);
+				transition: 0.4s;
+			}
+			&:hover {
+				&:after {
+					transform: scale(1);
+				}
+			}
+		}
+	}
 }
 .logo {
-	&_subtitle {}
+	width: 186px;
+	height: 35px;
+	h1 {
+		padding-top: 1px;
+		color: #F1CDB3;
+		font-size: 32px;
+		font-family: $gr;
+		margin-bottom: 10px;
+		line-height: 110%;
+		letter-spacing: 0.06em;
+	}	
+	&_subtitle {
+		font-size: 13px;
+		color: #fff;
+		letter-spacing: 0.1em;
+		font-family: $ar;
+		font-weight: 400;
+		letter-spacing: 0.1em;
+		line-height: 15px;
+		padding-left: 4px;
+	}
+}
+h2 {
+	margin-left: 40px;
+	font-size: 44px;
+	font-family: $gr;
+	color: #fff;
+	width: 310px;
+	height: 114px;
+	line-height: 130%;
 }
 .main-page {
 	margin: 0 auto;
@@ -19,8 +91,42 @@ header {
 	width: 1280px;
 	height: 908px;
 	background: url("assets/images/bg_main.jpg") no-repeat 50%/contain;
+	h2 {
+		margin-bottom: 42px;
+	}
+	p {
+		width: 460px;
+		height: 72px;
+		margin-left: 40px;
+		color: #CDCDCD;
+		margin-bottom: 41px;
+	}
+	.button {
+		width: 207px;
+		height: 52px;
+	}
 }
 .regular {
-	font-family: 'GeorgiaRegular';
+	font-size: 15px;
+	font-family: $ar;
+	font-weight: 400;
+	line-height: 24px;
+}
+.button {
+	background-color: #F1CDB3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $gr;
+	font-size: 17px;
+	color: #292929;
+	line-height: 130%;
+	letter-spacing: 0.06em;
+	border-radius: 100px;
+	margin-left: 40px;
+	&:active {
+		box-shadow: inset 0px 0px 2px 2px rgba(0,0,0,1);
+		transform: translate(2px, 2px);
+	}
 }
 
