@@ -385,7 +385,9 @@ h3 {
           justify-content: space-between; }
   .iconsBlock:last-child {
     margin-top: 55px;
-    padding: 0 84px; }
+    width: 858px; }
+  .iconsBlock__tile:nth-child(3) .iconsBlock__tile_title {
+    margin-left: 1px; }
   .iconsBlock__tile_icon {
     display: -webkit-box;
     display: -webkit-flex;
