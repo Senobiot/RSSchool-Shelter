@@ -2,3 +2,13 @@
   font-family: 'GeorgiaRegular';
   src: url("assets/fonts/GeorgiaRegular.eot");
   src: url("assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("assets/fonts/GeorgiaRegular.woff") format("woff"), url("assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
+
+@font-face {
+  font-family: 'Arialregular';
+  src: url("assets/fonts/Arialregular.eot");
+  src: url("assets/fonts/Arialregular.eot") format("embedded-opentype"), url("assets/fonts/Arialregular.woff2") format("woff2"), url("assets/fonts/Arialregular.woff") format("woff"), url("assets/fonts/Arialregular.ttf") format("truetype"), url("assets/fonts/Arialregular.svg#Arialregular") format("svg"); }
+
+@font-face {
+  font-family: 'ArialItalic';
+  src: url("assets/fonts/ArialItalic.eot");
+  src: url("assets/fonts/ArialItalic.eot") format("embedded-opentype"), url("assets/fonts/ArialItalic.woff2") format("woff2"), url("assets/fonts/ArialItalic.woff") format("woff"), url("assets/fonts/ArialItalic.ttf") format("truetype"), url("assets/fonts/ArialItalic.svg#ArialItalic") format("svg"); }
