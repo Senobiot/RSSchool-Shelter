@@ -92,9 +92,9 @@ header {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 443px; }
-    header ul .header_active {
+    header ul .nav_active {
       color: #FAFAFA; }
-      header ul .header_active:after {
+      header ul .nav_active:after {
         -webkit-transform: scale(1);
             -ms-transform: scale(1);
                 transform: scale(1); }
@@ -104,7 +104,10 @@ header {
       line-height: 24px;
       font-size: 15px;
       font-weight: 400;
-      position: relative; }
+      position: relative;
+      -webkit-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s; }
       header ul a:after {
         position: absolute;
         content: '';
@@ -116,13 +119,11 @@ header {
         -webkit-transform: scale(0);
             -ms-transform: scale(0);
                 transform: scale(0);
-        -webkit-transition: 0.4s;
-        -o-transition: 0.4s;
-        transition: 0.4s; }
-      header ul a:hover:after {
-        -webkit-transform: scale(1);
-            -ms-transform: scale(1);
-                transform: scale(1); }
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s; }
+      header ul a:hover {
+        color: #fff; }
 
 .logo {
   width: 186px;
@@ -155,20 +156,31 @@ h2 {
 
 .main-page {
   margin: 0 auto;
-  padding-top: 343px;
+  padding-top: 180px;
   width: 1280px;
   height: 908px;
   background: url("assets/images/bg_main.jpg") no-repeat 50%/contain; }
-  .main-page h2 {
-    margin-bottom: 42px; }
-  .main-page p {
-    width: 460px;
-    height: 72px;
-    color: #CDCDCD;
-    margin-bottom: 41px; }
-  .main-page .button {
-    width: 207px;
-    height: 52px; }
+  .main-page .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .main-page_content {
+    padding-top: 163px; }
+    .main-page_content h2 {
+      margin-bottom: 42px; }
+    .main-page_content p {
+      width: 460px;
+      height: 72px;
+      color: #CDCDCD;
+      margin-bottom: 41px; }
+    .main-page_content .button {
+      width: 207px;
+      height: 52px; }
 
 .wrapper {
   width: 1200px;
@@ -203,9 +215,9 @@ h2 {
   -webkit-transition: 0.075s;
   -o-transition: 0.075s;
   transition: 0.075s; }
+  .button:hover {
+    background-color: #FDDCC4; }
   .button:active {
-    -webkit-box-shadow: inset 0px 0px 2px 2px black;
-            box-shadow: inset 0px 0px 2px 2px black;
     -webkit-transform: translate(2px, 2px);
         -ms-transform: translate(2px, 2px);
             transform: translate(2px, 2px); }
@@ -224,13 +236,23 @@ h3 {
 
 .about {
   height: 588px;
-  padding: 94px 215px 0 635px;
-  background: #fff url("assets/images/about-pets.png") no-repeat 215px 80px; }
-  .about h3 {
+  padding-top: 80px;
+  background-color: #fff; }
+  .about .wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 175px; }
+    .about .wrapper img {
+      width: 300px;
+      height: 408px;
+      margin-right: 120px; }
+  .about_content h3 {
     width: 370px;
     height: 90px;
-    margin-bottom: 25px; }
-  .about .regular {
+    margin: 15px 0 24px; }
+  .about_content .regular {
     width: 430px;
     color: #4C4C4C;
     margin-bottom: 25px; }
@@ -242,7 +264,7 @@ h3 {
   .friends h3 {
     width: 405px;
     height: 90px;
-    margin: 0 auto 60px;
+    margin: 1px auto 59px;
     text-align: center;
     padding-left: 3px; }
   .friends__slider {
@@ -273,6 +295,9 @@ h3 {
       -webkit-transition: 0.2s;
       -o-transition: 0.2s;
       transition: 0.2s; }
+      .friends__slider_arrow:hover {
+        background-color: #FDDCC4;
+        border: 2px solid #FDDCC4; }
       .friends__slider_arrow:active {
         -webkit-box-shadow: inset 0px 0px 7px 2px #F1CDB3;
                 box-shadow: inset 0px 0px 7px 2px #F1CDB3;
@@ -298,10 +323,8 @@ h3 {
     margin: 0 auto;
     -webkit-transition: 0.15s;
     -o-transition: 0.15s;
-    transition: 0.15s; }
-    .friends .button:active {
-      -webkit-box-shadow: inset 0px 0px 7px 2px #000;
-              box-shadow: inset 0px 0px 7px 2px #000; }
+    transition: 0.15s;
+    padding-left: 2px; }
 
 .slide {
   width: 270px;
@@ -319,7 +342,8 @@ h3 {
     width: 270px;
     height: 270px; }
   .slide_title {
-    margin: 30px 0;
+    margin: 30px 0 30px;
+    padding-left: 2px;
     color: #545454;
     font-size: 20px;
     line-height: 23px;
@@ -353,9 +377,10 @@ h3 {
     -webkit-transition: 0.15s;
     -o-transition: 0.15s;
     transition: 0.15s; }
+    .slide_button:hover {
+      background-color: #FDDCC4;
+      border: 2px solid #FDDCC4; }
     .slide_button:active {
-      -webkit-box-shadow: inset 0px 0px 7px 2px #F1CDB3;
-              box-shadow: inset 0px 0px 7px 2px #F1CDB3;
       -webkit-transform: translate(2px, 2px);
           -ms-transform: translate(2px, 2px);
               transform: translate(2px, 2px); }
@@ -372,7 +397,8 @@ h3 {
     text-align: center; }
 
 .iconsBlock {
-  width: 1026px;
+  padding-left: 1px;
+  width: 1028px;
   height: 113px;
   margin: 0 auto;
   display: -webkit-box;
@@ -385,7 +411,7 @@ h3 {
           justify-content: space-between; }
   .iconsBlock:last-child {
     margin-top: 55px;
-    width: 858px; }
+    width: 860px; }
   .iconsBlock__tile_icon {
     display: -webkit-box;
     display: -webkit-flex;
@@ -441,7 +467,8 @@ h3 {
     height: 43px;
     border-radius: 9px;
     background-color: #F1CDB3;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    cursor: auto; }
     .donate .creditCard img {
       margin: 0 15px; }
     .donate .creditCard .creditNubmer {
@@ -451,6 +478,61 @@ h3 {
       line-height: 115%;
       letter-spacing: 0.06em;
       color: #545454; }
+      .donate .creditCard .creditNubmer:hover {
+        -webkit-animation: creditShake 0.2s linear forwards, ligth 0.6s linear 0.25s infinite;
+                animation: creditShake 0.2s linear forwards, ligth 0.6s linear 0.25s infinite; }
+
+@-webkit-keyframes creditShake {
+  0% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  20% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px); }
+  40% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  60% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px); }
+  80% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
+
+@keyframes creditShake {
+  0% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  20% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px); }
+  40% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  60% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px); }
+  80% {
+    -webkit-transform: translateX(3px);
+            transform: translateX(3px); }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); } }
+
+@-webkit-keyframes ligth {
+  0% { }
+  50% {
+    color: #FDDCC4; }
+  100% { } }
+
+@keyframes ligth {
+  0% { }
+  50% {
+    color: #FDDCC4; }
+  100% { } }
 
 .cardAgreement {
   width: 380px;
@@ -496,6 +578,8 @@ footer {
       margin-bottom: 33px; }
     .content:nth-child(2) div:nth-child(2) {
       margin-bottom: 32px; }
+      .content:nth-child(2) div:nth-child(2) img {
+        padding-bottom: 3px; }
   .content_contact {
     margin-bottom: 40px;
     display: -webkit-box;
@@ -515,4 +599,9 @@ footer {
       font-size: 20px;
       line-height: 115%;
       letter-spacing: 0.06em;
-      color: #F1CDB3; }
+      color: #F1CDB3;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .content_contact a:hover {
+        color: #fff; }
