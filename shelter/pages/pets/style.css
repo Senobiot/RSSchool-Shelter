@@ -1,18 +1,18 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'GeorgiaRegular';
-  src: url("assets/fonts/GeorgiaRegular.eot");
-  src: url("assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("assets/fonts/GeorgiaRegular.woff") format("woff"), url("assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
+  src: url("../../assets/fonts/GeorgiaRegular.eot");
+  src: url("../../assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("../../assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("../../assets/fonts/GeorgiaRegular.woff") format("woff"), url("../../assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("../../assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
 
 @font-face {
   font-family: 'Arialregular';
-  src: url("assets/fonts/Arialregular.eot");
-  src: url("assets/fonts/Arialregular.eot") format("embedded-opentype"), url("assets/fonts/Arialregular.woff2") format("woff2"), url("assets/fonts/Arialregular.woff") format("woff"), url("assets/fonts/Arialregular.ttf") format("truetype"), url("assets/fonts/Arialregular.svg#Arialregular") format("svg"); }
+  src: url("../../assets/fonts/Arialregular.eot");
+  src: url("../../assets/fonts/Arialregular.eot") format("embedded-opentype"), url("../../assets/fonts/Arialregular.woff2") format("woff2"), url("../../assets/fonts/Arialregular.woff") format("woff"), url("../../assets/fonts/Arialregular.ttf") format("truetype"), url("../../assets/fonts/Arialregular.svg#Arialregular") format("svg"); }
 
 @font-face {
   font-family: 'ArialItalic';
-  src: url("assets/fonts/ArialItalic.eot");
-  src: url("assets/fonts/ArialItalic.eot") format("embedded-opentype"), url("assets/fonts/ArialItalic.woff2") format("woff2"), url("assets/fonts/ArialItalic.woff") format("woff"), url("assets/fonts/ArialItalic.ttf") format("truetype"), url("assets/fonts/ArialItalic.svg#ArialItalic") format("svg"); }
+  src: url("../../assets/fonts/ArialItalic.eot");
+  src: url("../../assets/fonts/ArialItalic.eot") format("embedded-opentype"), url("../../assets/fonts/ArialItalic.woff2") format("woff2"), url("../../assets/fonts/ArialItalic.woff") format("woff"), url("../../assets/fonts/ArialItalic.ttf") format("truetype"), url("../../assets/fonts/ArialItalic.svg#ArialItalic") format("svg"); }
 
 /*Обнуление*/
 * {
@@ -337,7 +337,7 @@ footer {
   width: 1280px;
   height: 350px;
   margin: 0 auto;
-  background: url("assets/images/bg_footer.jpg") no-repeat 50%/cover;
+  background: url("../../assets/images/bg_footer.jpg") no-repeat 50%/cover;
   padding-top: 39px; }
   footer .wrapper {
     display: -webkit-box;
