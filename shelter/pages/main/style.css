@@ -1,18 +1,18 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'GeorgiaRegular';
-  src: url("assets/fonts/GeorgiaRegular.eot");
-  src: url("assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("assets/fonts/GeorgiaRegular.woff") format("woff"), url("assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
+  src: url("../../assets/fonts/GeorgiaRegular.eot");
+  src: url("../../assets/fonts/GeorgiaRegular.eot") format("embedded-opentype"), url("../../assets/fonts/GeorgiaRegular.woff2") format("woff2"), url("../../assets/fonts/GeorgiaRegular.woff") format("woff"), url("../../assets/fonts/GeorgiaRegular.ttf") format("truetype"), url("../../assets/fonts/GeorgiaRegular.svg#GeorgiaRegular") format("svg"); }
 
 @font-face {
   font-family: 'Arialregular';
-  src: url("assets/fonts/Arialregular.eot");
-  src: url("assets/fonts/Arialregular.eot") format("embedded-opentype"), url("assets/fonts/Arialregular.woff2") format("woff2"), url("assets/fonts/Arialregular.woff") format("woff"), url("assets/fonts/Arialregular.ttf") format("truetype"), url("assets/fonts/Arialregular.svg#Arialregular") format("svg"); }
+  src: url("../../assets/fonts/Arialregular.eot");
+  src: url("../../assets/fonts/Arialregular.eot") format("embedded-opentype"), url("../../assets/fonts/Arialregular.woff2") format("woff2"), url("../../assets/fonts/Arialregular.woff") format("woff"), url("../../assets/fonts/Arialregular.ttf") format("truetype"), url("../../assets/fonts/Arialregular.svg#Arialregular") format("svg"); }
 
 @font-face {
   font-family: 'ArialItalic';
-  src: url("assets/fonts/ArialItalic.eot");
-  src: url("assets/fonts/ArialItalic.eot") format("embedded-opentype"), url("assets/fonts/ArialItalic.woff2") format("woff2"), url("assets/fonts/ArialItalic.woff") format("woff"), url("assets/fonts/ArialItalic.ttf") format("truetype"), url("assets/fonts/ArialItalic.svg#ArialItalic") format("svg"); }
+  src: url("../../assets/fonts/ArialItalic.eot");
+  src: url("../../assets/fonts/ArialItalic.eot") format("embedded-opentype"), url("../../assets/fonts/ArialItalic.woff2") format("woff2"), url("../../assets/fonts/ArialItalic.woff") format("woff"), url("../../assets/fonts/ArialItalic.ttf") format("truetype"), url("../../assets/fonts/ArialItalic.svg#ArialItalic") format("svg"); }
 
 /*Обнуление*/
 * {
@@ -168,7 +168,8 @@ h2 {
   padding-top: 180px;
   width: 1280px;
   height: 908px;
-  background: url("assets/images/bg_main.jpg") no-repeat 50%/contain; }
+  background: url("../../assets/images/noise_transparent_2x.png"), -o-radial-gradient(0% 0%, 60% 215.42%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("../../assets/images/noise_transparent_2x.png"), radial-gradient(60% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; }
   .main-page .wrapper {
     display: -webkit-box;
     display: -webkit-flex;
@@ -300,7 +301,7 @@ h3 {
       height: 52px;
       border-radius: 100px;
       cursor: pointer;
-      background: url("assets/images/arrow.png") no-repeat 50%;
+      background: url("../../assets/images/arrow.png") no-repeat 50%;
       -webkit-transition: 0.2s;
       -o-transition: 0.2s;
       transition: 0.2s; }
@@ -314,7 +315,7 @@ h3 {
             -ms-transform: translate(2px, 2px);
                 transform: translate(2px, 2px); }
       .friends__slider_arrow:first-child {
-        background-image: url("assets/images/arrow_r.png"); }
+        background-image: url("../../assets/images/arrow_r.png"); }
     .friends__slider_viewport {
       display: -webkit-box;
       display: -webkit-flex;
@@ -341,12 +342,14 @@ h3 {
   background-color: #FAFAFA;
   text-align: center;
   cursor: pointer;
+  border-radius: 9px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s; }
   .slide:hover {
     -webkit-box-shadow: 0px 0px 50px 7px #cacaca;
-            box-shadow: 0px 0px 50px 7px #cacaca; }
+            box-shadow: 0px 0px 50px 7px #cacaca;
+    background-color: #fff; }
   .slide img {
     width: 270px;
     height: 270px; }
@@ -493,8 +496,10 @@ h3 {
       letter-spacing: 0.06em;
       color: #545454; }
       .donate .creditCard .creditNubmer:hover {
-        -webkit-animation: creditShake 0.2s linear forwards, ligth 0.6s linear 0.25s infinite;
-                animation: creditShake 0.2s linear forwards, ligth 0.6s linear 0.25s infinite; }
+        -webkit-animation: creditShake 0.2s linear forwards,
+ ligth 0.6s linear 0.25s infinite;
+                animation: creditShake 0.2s linear forwards,
+ ligth 0.6s linear 0.25s infinite; }
 
 @-webkit-keyframes creditShake {
   0% {
@@ -568,7 +573,7 @@ footer {
   width: 1280px;
   height: 350px;
   margin: 0 auto;
-  background: url("assets/images/bg_footer.jpg") no-repeat 50%/cover;
+  background: url("../../assets/images/bg_footer.jpg") no-repeat 50%/cover;
   padding-top: 39px; }
   footer .wrapper {
     display: -webkit-box;

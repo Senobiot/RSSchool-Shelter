@@ -94,7 +94,8 @@ h2 {
 		display: flex;
 		justify-content: space-between;
 	}
-	background: url("assets/images/bg_main.jpg") no-repeat 50%/contain;
+	// background: url("assets/images/bg_main.jpg") no-repeat 50%/contain;
+	background: url("assets/images/noise_transparent_2x.png"), radial-gradient(60% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 	&_content {
 		padding-top: 163px;
 		h2 {
@@ -252,9 +253,11 @@ h3 {
 	background-color: #FAFAFA;
 	text-align: center;
 	cursor: pointer;
+	border-radius: 9px;
 	transition: 0.3s;
 	&:hover{
 		box-shadow: 0px 0px 50px 7px #cacaca;
+		background-color: #fff;
 	}
 	img {
 		width: 270px;
