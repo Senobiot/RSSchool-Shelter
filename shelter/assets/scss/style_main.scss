@@ -4,9 +4,12 @@
 $ar: 'Arialregular', sans-serif;
 $ai: 'ArialItalic', sans-serif;
 $gr: 'GeorgiaRegular', sans-serif;
-
+html {
+	width: auto;
+}
 body {
 	background-color: #E5E5E5;
+	width: auto;
 }
 
 //<!-- ======================section MAIN-PAGE==================== -->
@@ -319,12 +322,7 @@ h3 {
 	width: 1028px;
 	height: 113px;
 	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
-	&:last-child {
-		margin-top: 55px;
-		width: 860px;
-	}
+	display: grid;
 	&__tile {
 		&_icon {
 			display: flex;
@@ -488,3 +486,116 @@ footer {
 		}
 	}
 }
+
+//--------------------break-points -------------------
+
+/* Portrait tablets and small desktops */
+
+@media (min-width: 768px) and (max-width: 1279px){
+	.wrapper, .main-page, .about, .friends, .help, .donate, footer {
+		width: 100vw;
+		padding-left:0;
+		padding-right: 0;
+		height: auto;
+	}
+	.button {
+		margin: 0 auto;
+	}
+	.wrapper {
+		flex-wrap: wrap;
+		padding: 0 30px;
+	}
+	header {
+		top: 30px;
+		width: 92.19%;
+		left: calc(50vw - 46.1%);
+		.logo h1 {
+			margin-bottom: 9px;
+		}
+		.logo_subtitle {
+			padding-left: 4px;
+		}
+	
+}
+	.main-page {
+		width: 100vw;
+		height: auto;
+		padding-top: 90px;
+		&_content {
+			width: 65%;
+			margin: 0 auto 100px;
+			padding-top: 60px;
+
+		}
+		p {
+			margin-bottom: 42px;
+		}
+		img {
+			width: 569px;
+			margin: 0;
+			margin-left: auto;
+		}
+	}
+
+	.about {
+	.wrapper {
+		padding-left: 30px;
+		img {
+			margin: 0 auto 100px;
+		}
+	}
+	&_content {
+		order: -1;
+		margin: 0 auto;
+		width: 61.72%;
+		margin-bottom: 55px;
+		h3 {
+			margin: 0 0 25px;
+		}
+		.regular {
+			width: 100%;
+		}
+	}
+}
+
+.friends {
+	padding-bottom: 100px;
+	h3 {
+		padding-left: 2px;
+	}
+	.button {
+		padding-left: 0px;
+	}
+	&__slider {
+		height: auto;
+		&_viewport {
+			width: 81.92%;
+			margin: 0;
+			flex-wrap: wrap;
+			.slide:last-child {
+				display: none;
+			}
+		}
+	}
+}
+
+.help {
+	h3 {
+		width: 315px;
+		margin-top: 2px;
+	}
+	.iconsBlock {
+		width: 82.03%;
+		height: auto;
+		flex-wrap: wrap;
+		&__tile {
+			width: 27%;
+		}		
+	}
+}
+.donate {
+	flex-wrap: wrap;
+}
+
+}
+
