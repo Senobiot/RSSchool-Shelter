@@ -73,8 +73,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
 /*--------------------*/
+html {
+  width: 100%;
+  overflow-x: hidden; }
+
 body {
-  background-color: #E5E5E5; }
+  background-color: #E5E5E5;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative; }
 
 .wrapper {
   width: 1200px;
@@ -227,6 +234,7 @@ header {
           -ms-flex-pack: justify;
               justify-content: space-between; }
       .pets-page__content_controls .button {
+        -webkit-tap-highlight-color: transparent;
         border: 2px solid #F1CDB3;
         width: 52px;
         height: 52px;
@@ -299,6 +307,7 @@ header {
   font-weight: 400; }
 
 .tile_button {
+  -webkit-tap-highlight-color: transparent;
   width: 187px;
   height: 52px;
   border: 2px solid #F1CDB3;
@@ -391,3 +400,180 @@ footer {
       transition: 0.3s; }
       .content_contact a:hover {
         color: #fff; }
+
+@media (max-width: 1279px) {
+  .wrapper, .pets-page, footer {
+    width: 100vw;
+    height: auto; }
+  header {
+    width: 100vw;
+    left: 0; }
+    header .wrapper {
+      width: 92.1875%;
+      height: 100%; }
+  .pets-page .wrapper {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .pets-page h3 {
+    width: 100%;
+    line-height: 45px;
+    margin-bottom: 30px; }
+  .pets-page__content {
+    max-width: 580px; }
+    .pets-page__content_pets {
+      height: auto;
+      margin-bottom: 10px;
+      padding: 0; }
+    .pets-page__content_controls {
+      margin-bottom: 76px; }
+  .pets-page .pets__tile {
+    margin-bottom: 30px; }
+    .pets-page .pets__tile:nth-child(n+7) {
+      display: none; }
+  footer {
+    padding-top: 31px; }
+    footer .wrapper {
+      padding: 0 64px 0;
+      -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; }
+      footer .wrapper .content {
+        padding-top: 0;
+        margin: 0 0 63px; }
+        footer .wrapper .content h3 {
+          line-height: 45px; }
+        footer .wrapper .content:nth-child(2) {
+          padding-left: 1px; }
+          footer .wrapper .content:nth-child(2) h3 {
+            margin-bottom: 32px; }
+          footer .wrapper .content:nth-child(2) div:nth-child(2) {
+            margin-bottom: 33px; }
+        footer .wrapper .content_image {
+          width: 100%; }
+          footer .wrapper .content_image .footer_img {
+            display: block;
+            margin: 0 auto; } }
+
+@media (min-width: 850px) {
+  footer .wrapper {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; } }
+
+@media (max-width: 767px) {
+  header {
+    left: 0; }
+    header .wrapper {
+      width: 93.75%; }
+    header .logo_subtitle {
+      padding-left: 4px; }
+    header ul {
+      display: none; }
+    header nav {
+      padding-top: 1px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      header nav .burger {
+        width: 9.375vw;
+        height: 6.875vw;
+        margin-right: 13.5vw;
+        position: relative; }
+        header nav .burger span {
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #000; }
+          header nav .burger span:nth-child(2) {
+            top: -webkit-calc(50% - 1px);
+            top: calc(50% - 1px); }
+          header nav .burger span:last-child {
+            bottom: 0; }
+  .pets-page {
+    padding-top: 0; }
+    .pets-page .wrapper {
+      padding: 42px 10px; }
+    .pets-page h3 {
+      font-size: 25px;
+      line-height: 32px;
+      height: auto;
+      margin-bottom: 42px; }
+    .pets-page__content {
+      max-width: 530px; }
+      .pets-page__content_pets {
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 12px; }
+        .pets-page__content_pets .pets__tile:nth-child(n+4) {
+          display: none; }
+      .pets-page__content_controls {
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 0; }
+  footer {
+    padding-top: 29px; }
+    footer .wrapper {
+      padding: 0 10px;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      footer .wrapper .content {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; }
+        footer .wrapper .content h3 {
+          width: 278px;
+          font-size: 25px;
+          text-align: center;
+          margin-bottom: 41px;
+          line-height: 32px; }
+        footer .wrapper .content_contact {
+          width: 78.44vw;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center; }
+          footer .wrapper .content_contact:last-child {
+            margin-bottom: 39px; }
+        footer .wrapper .content:nth-child(2) {
+          max-width: 300px; }
+          footer .wrapper .content:nth-child(2) h3 {
+            margin-left: -1px;
+            margin-bottom: 41px; }
+          footer .wrapper .content:nth-child(2) div {
+            width: 100%;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+                -ms-flex-pack: start;
+                    justify-content: flex-start;
+            margin-bottom: 41px; }
+            footer .wrapper .content:nth-child(2) div img {
+              margin-right: 19px; }
+            footer .wrapper .content:nth-child(2) div:nth-child(2) {
+              margin-bottom: 39px; }
+      footer .wrapper .content_image {
+        width: 100%; }
+        footer .wrapper .content_image img {
+          height: 269px; } }
