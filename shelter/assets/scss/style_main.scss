@@ -14,6 +14,9 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 	position: relative;
+	&.active  {
+		overflow: hidden;
+	}
 }
 
 //<!-- ======================section MAIN-PAGE==================== -->
@@ -31,12 +34,6 @@ header {
 		display: flex;
 		justify-content: space-between;
 		width: 443px;
-		.nav_active {
-				color: #FAFAFA;
-				&:after {
-					transform: scale(1);
-				}
-			}
 		a {
 			color: #CDCDCD;
 			font-family: $ar;
@@ -91,6 +88,21 @@ h2 {
 	width: 310px;
 	height: 114px;
 	line-height: 130%;
+}
+// 	.help_link.active, .contacts_link.active {
+// 		display: block;
+// 		text-align: center;
+// 		animation: construction 4s linear;
+// 	}
+// @keyframes construction {
+// 	25% {opacity: 0;}
+// 	50% {opacity: 1; color: yellow;}
+// 	75% {opacity: 0;}
+// 	100% {opacity: 1; color: #CDCDCD}
+// }
+.disabled {
+	pointer-events: none;
+	cursor: default;
 }
 .main-page {
 	margin: 0 auto;
@@ -674,20 +686,41 @@ footer {
 
 @media (max-width: 767px) {
 	header {
+		z-index: 2;
 		left: calc(50vw - 46.875%);
-		ul {
-			display: none;
+		.logo {
+			z-index: 3;
 		}
+
 		nav {
-			padding-top: 1px;
 			display: flex;
 			align-items: center;
+			justify-content: center;
+			ul {
+				padding-top: 0;
+				width: 243px;
+				height: 327px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				li {
+					width: 100%;
+					text-align: center;
+					a {
+						font-size: 32px;
+						line-height: 51.2px;
+					}
+				}
+			}
 		}
 		.burger {
+			z-index: 2;
+			top: 20px;
 			width: 9.375vw;
 			height: 6.875vw;
 			margin-right: 12vw;
 			position: relative;
+			transition: 1s;
 			span {
 				position: absolute;
 				display: block;
@@ -696,13 +729,39 @@ footer {
 				background-color: #F1CDB3;
 				&:nth-child(2) {
 					top: calc(50% - 1px);
+					transition: 1s;
 				}
 				&:last-child {
 					bottom: 0;
 				}
 			}
+			&.active {
+				transform: rotate(90deg);
+				span:nth-child(2) {
+				transform: rotate(540deg);
+				}
+
+			}
 		}
+		.nav {
+			position: absolute;
+			top: -30px;
+			right: -5%;
+			width: 320px;
+			height: 100vh;
+			transition: 1s;
+			background-color: #292929;
+			z-index: 2;
+			transform: scaleX(0);
+			transform-origin: right;
+			&.active {
+				transition: 1s;
+				transform: scaleX(1);
+			}
+		}
+
 	}
+
 	.main-page {
 		.wrapper {
 			padding: 0 10px;
@@ -927,3 +986,4 @@ footer {
 		}
 	}
 }
+
