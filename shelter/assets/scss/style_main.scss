@@ -19,6 +19,106 @@ body {
 	}
 }
 
+.mask.active {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(41, 41, 41, 0.6);
+	}
+.popup {
+	display: flex;
+	position: relative;
+	transform: scale(0);
+	transition: 0.5s;
+	border-radius: 8px;
+	position: fixed;
+	top: calc(50% - 250px);
+	left: calc(50% - 450px);
+	z-index: 3;
+	width: 900px;
+	height: 500px;
+	box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+	background-color: #FAFAFA;
+	&_close {
+		position: absolute;
+		-webkit-tap-highlight-color: transparent;
+		top: -52px;
+		right: -40px;
+		width: 52px;
+		height: 52px;
+		border-radius: 50%;
+		border: 2px solid #F1CDB3;
+		cursor: pointer;
+		&:before {
+			content: '\1f7a3';
+			position: absolute;
+			display: block;
+			font-size: 20px;
+			top: calc(50% - 10px);
+			left: calc(50% - 9px);
+			transform: rotate(45deg);
+		}
+	}
+	&_img {
+		display: block;
+		width: 500px;
+		height: auto;
+		border-radius: 8px;
+	}
+	&__content {
+		width: 400px;
+		padding: 50px 20px 0 29px;
+		&_title {
+			font-family: $gr;
+			font-size: 35px;
+			line-height: 45px;
+			letter-spacing: 0.06em;
+			color: #000;
+			margin-bottom: 10px;
+		}
+		&_subtitle {
+			font-family: $gr;
+			font-size: 20px;
+			line-height: 23px;
+			letter-spacing: 0.06em;
+			color: #000;
+			margin-bottom: 40px;
+		}
+		&_description {
+			font-family: $gr;
+			font-size: 15px;
+			line-height: 17px;
+			letter-spacing: 0.06em;
+			color: #000;
+			text-align: left;
+		}
+		&_attributes {
+			padding: 40px 0 0 10px;
+			p {
+				position: relative;
+				margin-bottom: 10px;
+				&:before {
+					content: '';
+					position: absolute;
+					top: calc(50% - 2px);
+					left: -10px;
+					border-radius: 50%;
+					width: 4px;
+					height: 4px;
+					background-color: #F1CDB3;
+				}
+			}
+			span {
+				font-weight: 700;
+			}
+		}
+	}
+	&.active {
+		transform: scale(1);
+	}
+}
 //<!-- ======================section MAIN-PAGE==================== -->
 
 header {
@@ -29,12 +129,22 @@ header {
 	left: calc(50% - 600px);
 	display: flex;
 	justify-content: space-between;
+	.burger {
+		display: none;
+	}
 	ul {
 		padding-top: 16px;
 		display: flex;
 		justify-content: space-between;
 		width: 443px;
+		.nav_current {
+			color: #FAFAFA;
+			&:after {
+				transform: scale(1);
+				}
+			}
 		a {
+			-webkit-tap-highlight-color: transparent;
 			color: #CDCDCD;
 			font-family: $ar;
 			line-height: 24px;
@@ -212,6 +322,9 @@ h3 {
 //	<!-- ======================section Our Friends======================== -->
 
 .friends {
+	.wrapper {
+		overflow: hidden;
+	}
 	height: 877px;
 	padding-top: 80px;
 	background-color: #F6F6F6;
@@ -243,7 +356,7 @@ h3 {
 				border: 2px solid #FDDCC4;
 			}
 			&:active {
-				box-shadow: inset 0px 0px 7px 2px #F1CDB3;
+				//box-shadow: inset 0px 0px 7px 2px #F1CDB3;
 				transform: translate(2px, 2px);
 			}
 			&:first-child{
@@ -255,6 +368,23 @@ h3 {
 			justify-content: space-between;
 			width: 990px;
 			margin: 0 53px;
+			//--------------------------------perspective ------------
+			// position: relative;
+			// perspective: 439px;
+			//-------------------------------------------------------slider----------------------
+
+		}
+		@keyframes sliderMove_L {
+			30% {transform: scale(0)}
+			31% {transform: translate(-150%);}
+			40% {transform: scale(1)}
+			100% {transform: translate(0)}
+		}
+		@keyframes sliderMove_R {
+			30% {transform: scale(0)}
+			31% {transform: translate(150%);}
+			40% {transform: scale(1)}
+			100% {transform: translate(0)}
 		}
 	}
 	.button {
@@ -270,6 +400,7 @@ h3 {
 }
 
 .slide {
+	-webkit-tap-highlight-color: transparent;
 	width: 270px;
 	height: 435px;
 	background-color: #FAFAFA;
@@ -686,12 +817,12 @@ footer {
 
 @media (max-width: 767px) {
 	header {
+		position: fixed;
 		z-index: 2;
 		left: calc(50vw - 46.875%);
 		.logo {
 			z-index: 3;
 		}
-
 		nav {
 			display: flex;
 			align-items: center;
@@ -703,10 +834,12 @@ footer {
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
+				justify-content: center;
 				li {
-					width: 100%;
+					display: block;
 					text-align: center;
 					a {
+						width: 100%;
 						font-size: 32px;
 						line-height: 51.2px;
 					}
@@ -714,8 +847,9 @@ footer {
 			}
 		}
 		.burger {
+			display: block;
 			z-index: 2;
-			top: 20px;
+			top: calc(50% - 3vw);
 			width: 9.375vw;
 			height: 6.875vw;
 			margin-right: 12vw;

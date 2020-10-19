@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="style_main.css">
 </head>
 <body>
-
 	<!-- ======================section MAIN-PAGE==================== -->
 	<header>
 		<div class="logo">
@@ -18,7 +17,7 @@
 		</div>
 		<nav class="nav">
 			<ul>
-				<li><a href="#" class="nav_active">About the shelter</a></li>
+				<li><a href="#" class="nav_current">About the shelter</a></li>
 				<li><a href="../pets/index.html">Our pets</a></li>
 				<li><a href="#" class="disabled">Help the shelter</a></li>
 				<li><a href="#" class="disabled">Contacts</a></li>
@@ -35,7 +34,7 @@
 			<div class="main-page_content">
 				<h2>Not only people<br>need a house</h2>
 				<p class="regular">We offer to give a chance to a little and nice<span> puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</span></p>
-				<button class="button">Make a friend</button>
+				<button class="button" onclick="window.location.href='../pets/index.html'">Make a friend</button>
 			</div>
 			<img src="assets/images/start-screen-puppy.png" alt="Puppy">
 		</div>
@@ -59,28 +58,43 @@
 		<div class="wrapper">
 			<h3>Our friends who<br> are looking for a house</h3>
 			<div class="friends__slider">
-				<div class="friends__slider_arrow"></div>
+				<div class="friends__slider_arrow arrowL"></div>
 				<div class="friends__slider_viewport">
 					<div class="slide">
-						<img src="assets/images/pets-katrine.png" alt="cat picture">
+						<img src="assets/images/katrine.png" alt="cat picture">
 						<div class="slide_title">Katrine</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 					<div class="slide">
-						<img src="assets/images/pets-jennifer.png" alt="Dog picture">
+						<img src="assets/images/jennifer.png" alt="Dog picture">
 						<div class="slide_title">Jennifer</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 					<div class="slide">
-						<img src="assets/images/pets-woody.png" alt="Dog picture">
+						<img src="assets/images/woody.png" alt="Dog picture">
 						<div class="slide_title">Woody</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 				</div>
-				<div class="friends__slider_arrow"></div>
+				<div class="friends__slider_arrow arrowR"></div>
 			</div>
-			<button class="button">Get to know the rest</button>
+			<button class="button" onclick="window.location.href='../pets/index.html'">Get to know the rest</button>
 		</div>
+			<div class="popup">
+				<div class="popup_close"></div>
+				<img src="assets/images/jennifer.png" alt="Katrin picture" class="popup_img">
+				<div class="popup__content">
+					<div class="popup__content_title">Jennifer</div>
+					<div class="popup__content_subtitle">Dog - Labrador</div>
+					<div class="popup__content_description">Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm in the house if she has all of her favorite toys.</h5>
+					<div class="popup__content_attributes">
+						<p><span>Age: </span>2 months</p>
+						<p><span>Inoculations: </span>none</p>
+						<p><span>Diseases: </span>none</p>
+						<p><span>Parasites: </span>none</p>
+					</div>
+				</div>
+			</div>
 	</section>
 
 	<!-- =======================section help=========================== -->
@@ -155,7 +169,7 @@
 			<h5>Name of the bank / Type of bank account</h5>
 			<button class="creditCard">
 				<img src="assets/images/credit-card.svg" alt="credit pic">
-				<a href="https://www.visa.com" class="creditNubmer">8380 2880 8028 8791 7435</a>
+				<a href="#" class="creditNubmer">8380 2880 8028 8791 7435</a>
 			</button>
 			<div class="cardAgreement">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</div>
 		</div>
@@ -191,8 +205,9 @@
 				<img src="assets/images/footer-puppy.png" class="footer_img" alt="puppy"></div>
 		</div>
 	</footer>
-
+	<div class="mask"></div>
 	<!-- =======================SCRIPTS============================== -->
+	<script type="text/javascript" src="assets/js/pets.json"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 </html>
