@@ -4,38 +4,37 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Shelter Pets</title>
+	<link rel="icon" type="image/png" href="../../assets/images/fav_dog.png">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 	<!-- ======================section MAIN-PAGE==================== -->
-
 	<header>
 		<div class="logo">
 			<h1>Cozy House</h1>
 			<div class="logo_subtitle">Shelter for pets in Boston</div>
 		</div>
-		<nav>
+		<nav class="nav">
 			<ul>
-				<li><a href="#" class="nav_active">About the shelter</a></li>
+				<li><a href="#" class="nav_current">About the shelter</a></li>
 				<li><a href="../pets/index.html">Our pets</a></li>
-				<li><a href="#">Help the shelter</a></li>
-				<li><a href="#">Contacts</a></li>
+				<li><a href="#" class="disabled">Help the shelter</a></li>
+				<li><a href="#" class="disabled">Contacts</a></li>
 			</ul>
-			<div class="burger">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
 		</nav>
+		<div class="burger">
+				<span></span>
+				<span></span>
+				<span></span>
+		</div>
 	</header>
 	<main class="main-page" id="main-page">
 		<div class="wrapper">
 			<div class="main-page_content">
 				<h2>Not only people<br>need a house</h2>
 				<p class="regular">We offer to give a chance to a little and nice<span> puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</span></p>
-				<button class="button">Make a friend</button>
+				<button class="button" onclick="window.location.href='../pets/index.html'">Make a friend</button>
 			</div>
 			<img src="../../assets/images/start-screen-puppy.png" alt="Puppy">
 		</div>
@@ -44,14 +43,14 @@
 	<!-- ======================section About======================== -->
 
 	<section class="about">
-			<div class="wrapper">
-				<img src="../../assets/images/about-pets.png" alt="Pets pic">
-				<div class="about_content">
-					<h3>About the shelter<br>“Cozy House”</h3>
-					<p class="regular">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find a family. The others will continue to live with us and will be waiting for a lucky chance to become dearly loved.</p>
-					<p class="regular">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels. About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become attached to the pets and would hardly ever leave them alone.</p>
-				</div>
+		<div class="wrapper">
+			<img src="../../assets/images/about-pets.png" alt="Pets pic">
+			<div class="about_content">
+				<h3>About the shelter<br>“Cozy House”</h3>
+				<p class="regular">Currently we have 121 dogs and 342 cats on our hands and tatistics show that only 20% of them will find a family. The others will continue to ive with us and will be waiting for a lucky chance to become dearly loved.</p>
+				<p class="regular">We feed our wards with the best food and make sure that they do ot get sick, feel comfortable (including psychologically) and well. We are supported y 87 volunteers and 28 employees of various skill levels. About 12% of the animals re taken by the shelter staff. Taking care of the animals, they become attached to he pets and would hardly ever leave them alone.</p>
 			</div>
+		</div>
 	</section>
 	<!-- ======================section Our friends===================== -->
 
@@ -59,28 +58,43 @@
 		<div class="wrapper">
 			<h3>Our friends who<br> are looking for a house</h3>
 			<div class="friends__slider">
-				<div class="friends__slider_arrow"></div>
+				<div class="friends__slider_arrow arrowL"></div>
 				<div class="friends__slider_viewport">
 					<div class="slide">
-						<img src="../../assets/images/pets-katrine.png" alt="cat picture">
+						<img src="../../assets/images/katrine.png" alt="cat picture">
 						<div class="slide_title">Katrine</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 					<div class="slide">
-						<img src="../../assets/images/pets-jennifer.png" alt="Dog picture">
+						<img src="../../assets/images/jennifer.png" alt="Dog picture">
 						<div class="slide_title">Jennifer</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 					<div class="slide">
-						<img src="../../assets/images/pets-woody.png" alt="Dog picture">
+						<img src="../../assets/images/woody.png" alt="Dog picture">
 						<div class="slide_title">Woody</div>
 						<div class="slide_button">Learn more</div>
 					</div>
 				</div>
-				<div class="friends__slider_arrow"></div>
+				<div class="friends__slider_arrow arrowR"></div>
 			</div>
-			<button class="button">Get to know the rest</button>
+			<button class="button" onclick="window.location.href='../pets/index.html'">Get to know the rest</button>
 		</div>
+			<div class="popup">
+				<div class="popup_close"></div>
+				<img src="../../assets/images/jennifer.png" alt="Katrin picture" class="popup_img">
+				<div class="popup__content">
+					<div class="popup__content_title"> </div>
+					<div class="popup__content_subtitle"> </div>
+					<div class="popup__content_description"> </div>
+					<div class="popup__content_attributes">
+						<p><span>Age: </span> </p>
+						<p><span>Inoculations: </span> a</p>
+						<p><span>Diseases: </span> </p>
+						<p><span>Parasites: </span> </p>
+					</div>
+				</div>
+			</div>
 	</section>
 
 	<!-- =======================section help=========================== -->
@@ -155,7 +169,7 @@
 			<h5>Name of the bank / Type of bank account</h5>
 			<button class="creditCard">
 				<img src="../../assets/images/credit-card.svg" alt="credit pic">
-				<a href="https://www.visa.com" class="creditNubmer">8380 2880 8028 8791 7435</a>
+				<a href="#" class="creditNubmer">8380 2880 8028 8791 7435</a>
 			</button>
 			<div class="cardAgreement">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</div>
 		</div>
@@ -191,8 +205,9 @@
 				<img src="../../assets/images/footer-puppy.png" class="footer_img" alt="puppy"></div>
 		</div>
 	</footer>
-
+	<div class="mask"></div>
 	<!-- =======================SCRIPTS============================== -->
-	<!-- <script src="../../assets/js/common.js"></script> -->
+	<script type="text/javascript" src="../../assets/js/pets.json"></script>
+	<script src="main.js"></script>
 </body>
 </html>

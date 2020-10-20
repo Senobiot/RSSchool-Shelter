@@ -43,16 +43,6 @@ let burger = document.querySelector(".burger"),
 		burger_menu_links[i].addEventListener('click', e => e.stopPropagation());
 	}
 
-window.addEventListener('resize', function(event){
-  if (window.innerWidth > 767) {
-	mask.classList.remove("active");
-	burger_menu.classList.remove("active");
-	burger.classList.remove("active");
-	body.classList.remove("active");
-	//popup.classList.remove("active");
-  }
-});
-
 burger.addEventListener("click", function () {
 	this.classList.toggle("active");
 	mask.classList.toggle("active");

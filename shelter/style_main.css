@@ -1080,7 +1080,7 @@ footer {
       -webkit-transition: 1s;
       -o-transition: 1s;
       transition: 1s;
-      background-color: #292929;
+      background-color: #fff;
       z-index: 3;
       -webkit-transform: scaleX(0);
           -ms-transform: scaleX(0);
@@ -1094,7 +1094,8 @@ footer {
         transition: 1s;
         -webkit-transform: scaleX(1);
             -ms-transform: scaleX(1);
-                transform: scaleX(1); }
+                transform: scaleX(1);
+        background-color: #fff; }
   .main-page .wrapper {
     padding: 0 10px; }
   .main-page img {
