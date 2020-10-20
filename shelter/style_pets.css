@@ -85,7 +85,11 @@ body {
   body.active {
     overflow: hidden; }
 
+.mask {
+  display: none; }
+
 .mask.active {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -147,8 +151,7 @@ body {
   .popup_img {
     display: block;
     width: 500px;
-    height: auto;
-    border-radius: 8px; }
+    height: auto; }
   .popup__content {
     width: 400px;
     padding: 50px 20px 0 29px; }
@@ -400,6 +403,7 @@ header {
           background-color: transparent; }
 
 .pets__tile {
+  -webkit-tap-highlight-color: transparent;
   width: 270px;
   height: 435px;
   background-color: #FAFAFA;
