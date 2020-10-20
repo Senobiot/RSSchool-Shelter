@@ -126,11 +126,29 @@ function randomSlide () {
 
 //-------------------------------------modals popups-------------------------
 
+let key;
+let index;
 for (let i = 0; i < slides.length; i++) {
 	slides[i].addEventListener("click", function () {
 		mask.classList.add("active");
 		popup.classList.add("active");
+		popup_key (i);
 	})
+}
+
+function popup_key (i) {
+	key = slides[i].childNodes[3].textContent;
+	index = pets.findIndex(j => j.name === key);
+	popup.childNodes[3].src = pets[index].img;
+	popup.childNodes[5].childNodes[1].textContent = key;
+	popup.childNodes[5].childNodes[3].textContent = `${pets[index].type} - ${pets[index].breed}`;
+	popup.childNodes[5].childNodes[5].childNodes[0].textContent = pets[index].description;
+	popup.childNodes[5].childNodes[7].childNodes[1].childNodes[1].textContent = pets[index].age;
+	popup.childNodes[5].childNodes[7].childNodes[3].childNodes[1].textContent = pets[index].inoculations;
+	popup.childNodes[5].childNodes[7].childNodes[5].childNodes[1].textContent = pets[index].diseases;
+	popup.childNodes[5].childNodes[7].childNodes[7].childNodes[1].textContent = pets[index].parasites;
+
+
 }
 
 document.querySelector(".popup_close").addEventListener("click", function () {
