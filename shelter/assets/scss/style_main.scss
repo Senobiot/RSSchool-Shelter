@@ -36,7 +36,7 @@ body {
 	position: fixed;
 	top: calc(50% - 250px);
 	left: calc(50% - 450px);
-	z-index: 3;
+	z-index: 2;
 	width: 900px;
 	height: 500px;
 	box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -51,6 +51,10 @@ body {
 		border-radius: 50%;
 		border: 2px solid #F1CDB3;
 		cursor: pointer;
+		transition: 0.3s;
+		&:hover {
+			background-color: #FDDCC4;
+		}
 		&:before {
 			content: '\1f7a3';
 			position: absolute;
@@ -96,6 +100,7 @@ body {
 		}
 		&_attributes {
 			padding: 40px 0 0 10px;
+			font-family: $gr;
 			p {
 				position: relative;
 				margin-bottom: 10px;
@@ -644,7 +649,7 @@ footer {
 	}
 }
 
-//--------------------break-points -------------------
+//---------------------------------------break-points -------------------------------------------
 
 
 @media (max-width: 1279px) {
@@ -660,6 +665,25 @@ footer {
 	.wrapper {
 		flex-wrap: wrap;
 		padding: 0 30px;
+	}
+	.popup {
+		width: 630px;
+		height: 350px;
+		left: calc(50% - 315px);
+		top: calc(50% - 157.5px);
+		&__content {
+			padding: 10px 9px 0 11px;
+			&_subtitle {
+				margin-bottom: 20px;
+			}
+			&_description {
+			font-size: 13px;
+			line-height: 14.3px;
+			}
+			&_attributes {
+				padding-top: 20px;
+			}
+		}
 	}
 	header {
 		top: 30px;
@@ -808,20 +832,39 @@ footer {
 	}
 
 }
-
+//--------------------------------------------------850px-------------------------------
 @media (max-width: 850px) {
 	footer .wrapper {
 		justify-content: space-between;
 	}
 }
+//---------------------------------------------------767px------------------------------------
 
 @media (max-width: 767px) {
+	.popup {
+		width: 240px;
+		height: auto;
+		left: calc(50% - 120px);
+		top: calc(50% - 170.5px);
+		&_img {
+			display: none;
+		}
+		&__content {
+			width: 100%;
+			&_description {
+				text-align: justify;
+			}
+		}
+		&_close {
+			right: -30px;
+		}
+	}
 	header {
 		position: fixed;
-		z-index: 2;
+		z-index: 4;
 		left: calc(50vw - 46.875%);
 		.logo {
-			z-index: 3;
+			z-index: 4;
 		}
 		nav {
 			display: flex;
@@ -848,7 +891,7 @@ footer {
 		}
 		.burger {
 			display: block;
-			z-index: 2;
+			z-index: 3;
 			top: calc(50% - 3vw);
 			width: 9.375vw;
 			height: 6.875vw;
@@ -885,7 +928,7 @@ footer {
 			height: 100vh;
 			transition: 1s;
 			background-color: #292929;
-			z-index: 2;
+			z-index: 3;
 			transform: scaleX(0);
 			transform-origin: right;
 			&.active {
