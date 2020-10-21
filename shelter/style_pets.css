@@ -74,13 +74,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 html {
-  width: 100%;
-  overflow-x: hidden; }
+  width: 100%; }
 
 body {
   background-color: #E5E5E5;
   width: 100%;
-  overflow-x: hidden;
   position: relative; }
   body.active {
     overflow: hidden; }
@@ -326,7 +324,8 @@ header {
     text-align: center;
     margin-bottom: 45px; }
   .pets-page__content {
-    width: 100%; }
+    width: 100%;
+    overflow: hidden; }
     .pets-page__content_pets {
       display: -webkit-box;
       display: -webkit-flex;
@@ -345,6 +344,62 @@ header {
               align-content: space-between;
       padding: 15px 0;
       margin-bottom: 45px; }
+
+@-webkit-keyframes sliderMove_L {
+  30% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  31% {
+    -webkit-transform: translate(-150%);
+            transform: translate(-150%); }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
+
+@keyframes sliderMove_L {
+  30% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  31% {
+    -webkit-transform: translate(-150%);
+            transform: translate(-150%); }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
+
+@-webkit-keyframes sliderMove_R {
+  30% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  31% {
+    -webkit-transform: translate(150%);
+            transform: translate(150%); }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
+
+@keyframes sliderMove_R {
+  30% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  31% {
+    -webkit-transform: translate(150%);
+            transform: translate(150%); }
+  40% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0); } }
     .pets-page__content_controls {
       width: 340px;
       height: 52px;
@@ -385,8 +440,6 @@ header {
         letter-spacing: 0.06em;
         color: #292929;
         background-color: #f6f6f6; }
-        .pets-page__content_controls .button.active {
-          background-color: #F1CDB3; }
         .pets-page__content_controls .button:hover {
           background-color: #FDDCC4;
           border: 2px solid #FDDCC4; }
@@ -401,6 +454,29 @@ header {
           border: 2px solid #CDCDCD; }
         .pets-page__content_controls .button:hover:disabled {
           background-color: transparent; }
+      .pets-page__content_controls .currentPage {
+        -webkit-tap-highlight-color: transparent;
+        width: 52px;
+        height: 52px;
+        border-radius: 100px;
+        font-family: "GeorgiaRegular", sans-serif;
+        font-size: 20px;
+        line-height: 115%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        letter-spacing: 0.06em;
+        color: #292929;
+        background-color: #F1CDB3; }
 
 .pets__tile {
   -webkit-tap-highlight-color: transparent;
@@ -414,8 +490,8 @@ header {
   -o-transition: 0.3s;
   transition: 0.3s; }
   .pets__tile:hover {
-    -webkit-box-shadow: 0px 0px 50px 7px #cacaca;
-            box-shadow: 0px 0px 50px 7px #cacaca;
+    -webkit-box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
     background-color: #fff; }
   .pets__tile img {
     width: 270px;
@@ -527,6 +603,8 @@ footer {
         color: #fff; }
 
 @media (max-width: 1279px) {
+  html, body {
+    overflow-x: hidden; }
   .wrapper, .pets-page, footer {
     width: 100vw;
     height: auto; }
@@ -678,7 +756,7 @@ footer {
       display: block;
       z-index: 3;
       top: 0px;
-      right: 53px;
+      right: 43px;
       width: 30px;
       height: 22px;
       position: relative;

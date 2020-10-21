@@ -11,7 +11,24 @@ let burger = document.querySelector(".burger"),
 	slider = document.querySelector(".pets-page__content_pets"),
 	slides = document.querySelectorAll(".pets__tile"),
 	popup = document.querySelector(".popup"),
-	pets = [];
+	// petsBlock = document.querySelector(".pets-page__content"),
+	petsBlock = document.querySelector(".pets-page__content_pets"),
+	// petsBlockWidth = petsBlock.offsetWidth,
+	slidesLength,
+	pets = [],
+	arrRandomNum = [], // нужно обнулить, если перезапускаем функцию
+	pagesOfAll,
+	//let multiRandom = [[4, 0, 2, 1, 5, 7, 3, 6]]; //тут будет формироваться массив 6*8 при загрузке страницы;
+	multiRandom = [4, 0, 2, 1, 5, 7, 3, 6];
+
+	//определяем необходимое количество слайдов для каждой адаптивной страницы пагинации
+	function pageSlidesQty (){
+			if (window.innerWidth < 768) {slidesLength = 3;}
+			if (window.innerWidth >= 768 && window.innerWidth < 1280) {slidesLength = 6;}
+			if (window.innerWidth >= 1280) {slidesLength = 8;}
+	}
+
+	pageSlidesQty ();
 
 //------------------------------------------------------cloning JSON in pets = [] ----------
 	
@@ -23,6 +40,7 @@ let burger = document.querySelector(".burger"),
 
 //----------------------------------------------event close mask + menu if rotate mobile device & width > 767
 
+
 window.addEventListener('resize', function(event){
   if (window.innerWidth > 767) {
 	mask.classList.remove("active");
@@ -30,7 +48,12 @@ window.addEventListener('resize', function(event){
 	burger.classList.remove("active");
 	body.classList.remove("active");
 	//popup.classList.remove("active");
-  }
+  } 
+  // if (petsBlock.offsetWidth !== petsBlockWidth) {
+  // 	document.location.reload();
+  // }
+
+	pageSlidesQty ();
 });
 //-----------------------------------------------events for burger/menu & slide up-----------------
 
@@ -66,6 +89,8 @@ document.querySelector(".nav_current").addEventListener("click", function () {
 	body.scrollTo({ top: 0, behavior: 'smooth' });
 })
 
+
+
 //----------------------------------------------remove event from menu area---------------------------
 
 for (let i = 0; i < burger_menu_links.length; i++) { 
@@ -74,15 +99,12 @@ for (let i = 0; i < burger_menu_links.length; i++) {
 
 //---------------------------------------------------------------------------animation
 
- // function reset_animation() { //сюда сразу запихнул рандомизацию слайдов
-	// setTimeout(function (){
-	// 	randomSlide()	
-	// }, 600)
-	// setTimeout(function (){
-	// slider.style.animation = 'none';
-	// slider.style.animation = null; 	
-	// }, 900)
- // }
+ function reset_animation() {
+	setTimeout(function (){
+	slider.style.animation = 'none';
+	slider.style.animation = null; 	
+	}, 900)
+ }
 
 // arrowL.addEventListener("click", function () {
 // 	if (slider.style.animation === "") {
@@ -103,8 +125,8 @@ function getRandomIntInclusive(min, max) {
 }
 
 
-let arrRandomNum = []; // нужно обнулить, если перезапускаем функцию
-let multiRandom = [[4, 0, 2, 1, 5, 7, 3, 6]]; //тут будет формироваться массив 6*8 при загрузке страницы;
+ //для 8 + 6 + 3 в виде одномерного
+
 function getRandEigth (qty) {
 	if (arrRandomNum.length < qty) {
 		let number = getRandomIntInclusive(0, 7); // заданный интервал 0-7 - это индексы массива pets из 8 элемента
@@ -118,62 +140,125 @@ function getRandEigth (qty) {
 
 //формируем массив из 48 элементов, мне нужен  только многомерный массив с индексами объекта pet
 //но так как PP то я первый элемент из 8 цифр добавил как в макете
-for (let i = 1; i < 6; i++) {
-	getRandEigth(8)
-	multiRandom.push(arrRandomNum);
-	arrRandomNum = [];
-}
+// for (let i = 1; i < 6; i++) {
+// 	getRandEigth(8)
+// 	multiRandom.push(arrRandomNum);
+// 	arrRandomNum = [];
+// }
 
-function pagination(pageNumber) {
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].childNodes[3].textContent = pets[multiRandom[pageNumber][i]].name;
-		slides[i].childNodes[1].alt = pets[multiRandom[pageNumber][i]].name + " picture";
-		slides[i].childNodes[1].src = pets[multiRandom[pageNumber][i]].img;
+// через одномерный 48 элементов, 8 уже есть как в ПП
+// for (let i = 0; i < 5; i++) {
+// 	getRandEigth(8)
+// 	multiRandom.push(...arrRandomNum);
+// 	arrRandomNum = [];
+// }
+
+// формируем массив так, чтобы три первых цифры новой группы из 8 не были равны последним трем цифрам предыдущей группы
+while (multiRandom.length < 48) { 
+	getRandEigth(8);
+		if (arrRandomNum.slice(0,3) !== multiRandom.slice(-3)) {
+			multiRandom.push(...arrRandomNum);
+			arrRandomNum = [];
 	}
 }
 
+//для многомерного 
+// function pagination(pageNumber) {
+// 	for (let i = 0; i < slides.length; i++) {
+// 		slides[i].childNodes[3].textContent = pets[multiRandom[pageNumber][i]].name;
+// 		slides[i].childNodes[1].alt = pets[multiRandom[pageNumber][i]].name + " picture";
+// 		slides[i].childNodes[1].src = pets[multiRandom[pageNumber][i]].img;
+// 	}
+// }
+
+// одномерный
+function pagination(pageNumber) {
+	for (let i = 0; i < slidesLength; i++) {
+		slides[i].childNodes[3].textContent = pets[multiRandom[i + pageNumber*slidesLength]].name;
+		slides[i].childNodes[1].alt = pets[multiRandom[i + pageNumber*slidesLength]].name + " picture";
+		slides[i].childNodes[1].src = pets[multiRandom[i + pageNumber*slidesLength]].img;
+	}
+}
+
+
 arrowR.addEventListener("click", function () {
-	pagination(currentPageBtn.innerHTML);
-	currentPageBtn.innerHTML++;
-	if (+currentPageBtn.innerHTML === 6) {
-		lastPageBtn.disabled = true;
-		arrowR.disabled = true;
-	} else if (arrowL.disabled === true) {
-		firstPageBtn.disabled = false;
-		arrowL.disabled = false;
+	if (slider.style.animation === "") {
+		slider.style.animation = "sliderMove_R 2s linear";
+		if (!pets[multiRandom[(+currentPageBtn.innerHTML + 1)*slidesLength]]) {
+			setTimeout(function (){
+				lastPageBtn.disabled = true;
+				arrowR.disabled = true;
+				pagination(currentPageBtn.innerHTML);
+				currentPageBtn.innerHTML++;
+			}, 600)
+	} else {
+			setTimeout(function (){
+				firstPageBtn.disabled = false;
+				arrowL.disabled = false;
+				pagination(currentPageBtn.innerHTML);
+				currentPageBtn.innerHTML++;
+				petsBlock.style.animation = "sliderMove_R 2s linear";
+				}, 600)
+		}
+		reset_animation();
 	}
 })
 
 
 arrowL.addEventListener("click", function () {
-	pagination(currentPageBtn.innerHTML - 2);
-	currentPageBtn.innerHTML--;
-	if (+currentPageBtn.innerHTML === 1) {
-		firstPageBtn.disabled = true;
-		arrowL.disabled = true;
-	} else if (arrowR.disabled === true) {
-		lastPageBtn.disabled = false;
-		arrowR.disabled = false;
+	if (slider.style.animation === "") {
+		slider.style.animation = "sliderMove_L 2s linear";
+		if (+currentPageBtn.innerHTML === 2) {
+			setTimeout(function (){
+			firstPageBtn.disabled = true;
+			arrowL.disabled = true;
+			pagination(currentPageBtn.innerHTML - 2);
+			currentPageBtn.innerHTML--;
+			}, 600)
+		} else {
+			setTimeout(function (){
+				lastPageBtn.disabled = false;
+				arrowR.disabled = false;
+				pagination(currentPageBtn.innerHTML - 2);
+				currentPageBtn.innerHTML--;
+			}, 600)
+		}
+
+		reset_animation();
 	}
 })
 
 
 lastPageBtn.addEventListener("click", function () {
-	pagination(5);
-	currentPageBtn.innerHTML = 6;
-		lastPageBtn.disabled = true;
-		arrowR.disabled = true;
-		firstPageBtn.disabled = false;
-		arrowL.disabled = false;
+	if (slider.style.animation === "") {
+		slider.style.animation = "sliderMove_R 2s linear";
+		setTimeout(function (){
+			pagination(multiRandom.length/slidesLength - 1);
+			currentPageBtn.innerHTML = multiRandom.length/slidesLength;
+			lastPageBtn.disabled = true;
+			arrowR.disabled = true;
+			firstPageBtn.disabled = false;
+			arrowL.disabled = false;
+		}, 600)
+
+		reset_animation();
+	}
 })
 
 firstPageBtn.addEventListener("click", function () {
-	pagination(0);
-	currentPageBtn.innerHTML = 1;
-		lastPageBtn.disabled = false;
-		arrowR.disabled = false;
-		firstPageBtn.disabled = true;
-		arrowL.disabled = true;
+	if (slider.style.animation === "") {
+		slider.style.animation = "sliderMove_L 2s linear";
+		setTimeout(function (){
+			pagination(0);
+			currentPageBtn.innerHTML = 1;
+			lastPageBtn.disabled = false;
+			arrowR.disabled = false;
+			firstPageBtn.disabled = true;
+			arrowL.disabled = true;
+		}, 600)
+
+		reset_animation();
+	}
 })
 
 // function randomSlide () {

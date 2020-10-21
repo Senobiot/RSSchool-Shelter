@@ -7,12 +7,10 @@ $gr: 'GeorgiaRegular', sans-serif;
 
 html {
 	width: 100%;
-	overflow-x: hidden;
 }
 body {
 	background-color: #E5E5E5;
 	width: 100%;
-	overflow-x: hidden;
 	position: relative;
 	&.active  {
 		overflow: hidden;
@@ -246,6 +244,7 @@ header {
 	}
 	&__content {
 		width: 100%;
+		overflow: hidden;
 		&_pets {	
 			display: flex;
 			height: 930px;
@@ -254,6 +253,18 @@ header {
 			align-content: space-between;
 			padding: 15px 0;
 			margin-bottom: 45px;
+			@keyframes sliderMove_L {
+				30% {transform: scale(0)}
+				31% {transform: translate(-150%);}
+				40% {transform: scale(1)}
+				100% {transform: translate(0)}
+			}
+			@keyframes sliderMove_R {
+				30% {transform: scale(0)}
+				31% {transform: translate(150%);}
+				40% {transform: scale(1)}
+				100% {transform: translate(0)}
+			}
 		}
 		&_controls {
 			width: 340px;
@@ -278,9 +289,6 @@ header {
 				letter-spacing: 0.06em;
 				color: #292929;
 				background-color: #f6f6f6;
-				&.active{
-					background-color: #F1CDB3;
-				}
 				&:hover {
 					background-color: #FDDCC4;
 					border: 2px solid #FDDCC4;
@@ -297,6 +305,22 @@ header {
 						background-color: transparent;
 				}
 			}
+			.currentPage {
+				-webkit-tap-highlight-color: transparent;
+				width: 52px;
+				height: 52px;
+				border-radius: 100px;
+				font-family: $gr;
+				font-size: 20px;
+				line-height: 115%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				letter-spacing: 0.06em;
+				color: #292929;
+				background-color: #F1CDB3;
+
+			}
 		}
 	}	
 }
@@ -312,7 +336,8 @@ header {
 	border-radius: 9px;
 	transition: 0.3s;
 	&:hover{
-		box-shadow: 0px 0px 50px 7px #cacaca;
+		// box-shadow: 0px 0px 50px 7px #cacaca; //мой стиль
+		box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04); //стиль макета
 		background-color: #fff;
 	}
 	img {
@@ -420,6 +445,9 @@ header {
 	}
 }
 @media (max-width: 1279px) {
+	html, body {
+		overflow-x: hidden;
+	}
 	.wrapper, .pets-page, footer {
 		width: 100vw;
 		height: auto;
@@ -587,7 +615,7 @@ header {
 			display: block;
 			z-index: 3;
 			top: 0px;
-			right: 53px;
+			right: 43px;
 			// width: 9.375vw;
 			// height: 6.875vw;
 			//margin-right: 13.3vw;
