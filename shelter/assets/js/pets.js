@@ -13,13 +13,13 @@ let burger = document.querySelector(".burger"),
 	popup = document.querySelector(".popup"),
 	// petsBlock = document.querySelector(".pets-page__content"),
 	petsBlock = document.querySelector(".pets-page__content_pets"),
-	// petsBlockWidth = petsBlock.offsetWidth,
+	petsBlockWidth = petsBlock.offsetWidth,
 	slidesLength,
 	pets = [],
 	arrRandomNum = [], // нужно обнулить, если перезапускаем функцию
 	pagesOfAll,
 	//let multiRandom = [[4, 0, 2, 1, 5, 7, 3, 6]]; //тут будет формироваться массив 6*8 при загрузке страницы;
-	multiRandom = [4, 0, 2, 1, 5, 7, 3, 6];
+	multiRandom = [];
 
 	//определяем необходимое количество слайдов для каждой адаптивной страницы пагинации
 	function pageSlidesQty (){
@@ -47,9 +47,16 @@ window.addEventListener('resize', function(event){
 	body.classList.remove("active");
 	popup.classList.remove("active");
   } 
-  // if (petsBlock.offsetWidth !== petsBlockWidth) {
-  // 	document.location.reload();
-  // }
+  if (petsBlock.offsetWidth !== petsBlockWidth) {
+  	pagination(0); // переключение на 1 страницу при брекпойнтах
+  	currentPageBtn.innerHTML = 1;
+	lastPageBtn.disabled = false;
+	arrowR.disabled = false;
+	firstPageBtn.disabled = true;
+	arrowL.disabled = true;
+  	petsBlockWidth = petsBlock.offsetWidth;
+  }
+
 
 	pageSlidesQty ();
 });
@@ -152,7 +159,7 @@ function pagination(pageNumber) {
 		slides[i].childNodes[1].src = pets[multiRandom[i + pageNumber*slidesLength]].img;
 	}
 }
-
+pagination(0); // для заполнения при старте
 
 arrowR.addEventListener("click", function () {
 	if (slider.style.animation === "") {

@@ -159,6 +159,8 @@ header {
 	}
 	nav .logo {
 		display: none;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
 	}
 	ul {
 		display: flex;
@@ -198,6 +200,8 @@ header {
 }
 .logo {
 	width: 186px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
 	h1 {
 		padding-top: 1px;
 		color: #545454;
@@ -217,10 +221,7 @@ header {
 		padding-left: 5px;
 	}
 }
-.disabled {
-	pointer-events: none;
-	cursor: default;
-}
+
 
 // -------------------------Pets Page ------------------------------
 
@@ -300,6 +301,8 @@ header {
 				&:disabled {
 					color: #CDCDCD;
 					border: 2px solid #CDCDCD;
+					pointer-events: none;
+					cursor: default;
 				}
 				&:hover:disabled {
 						background-color: transparent;
@@ -587,10 +590,14 @@ header {
 					color:#FAFAFA;
 				}
 				a {
+					-webkit-tap-highlight-color: transparent;
 					width: 100%;
 					font-size: 32px;
 					line-height: 51.2px;
 					color: #CDCDCD;
+					&:hover {
+						color: #CDCDCD;
+					}
 				}
 			}
 		}
@@ -677,7 +684,7 @@ header {
 			margin-bottom: 42px;
 		}
 		&__content {
-			max-width: 530px;
+			max-width: 300px;
 			&_pets {
 				justify-content: center;
 				margin-bottom: 12px;
