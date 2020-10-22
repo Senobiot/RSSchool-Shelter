@@ -235,7 +235,9 @@ header {
         -ms-flex-align: center;
             align-items: center; }
   header nav .logo {
-    display: none; }
+    display: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; }
   header ul {
     display: -webkit-box;
     display: -webkit-flex;
@@ -281,7 +283,9 @@ header {
         color: #292929; }
 
 .logo {
-  width: 186px; }
+  width: 186px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; }
   .logo h1 {
     padding-top: 1px;
     color: #545454;
@@ -298,10 +302,6 @@ header {
     font-weight: 400;
     line-height: 15px;
     padding-left: 5px; }
-
-.disabled {
-  pointer-events: none;
-  cursor: default; }
 
 .pets-page {
   width: 1280px;
@@ -451,7 +451,9 @@ header {
                   transform: translate(2px, 2px); }
         .pets-page__content_controls .button:disabled {
           color: #CDCDCD;
-          border: 2px solid #CDCDCD; }
+          border: 2px solid #CDCDCD;
+          pointer-events: none;
+          cursor: default; }
         .pets-page__content_controls .button:hover:disabled {
           background-color: transparent; }
       .pets-page__content_controls .currentPage {
@@ -729,10 +731,13 @@ footer {
         header ul li .nav_current {
           color: #FAFAFA; }
         header ul li a {
+          -webkit-tap-highlight-color: transparent;
           width: 100%;
           font-size: 32px;
           line-height: 51.2px;
           color: #CDCDCD; }
+          header ul li a:hover {
+            color: #CDCDCD; }
     header nav {
       padding-top: 1px;
       display: -webkit-box;
@@ -821,7 +826,7 @@ footer {
       height: auto;
       margin-bottom: 42px; }
     .pets-page__content {
-      max-width: 530px; }
+      max-width: 300px; }
       .pets-page__content_pets {
         -webkit-box-pack: center;
         -webkit-justify-content: center;
