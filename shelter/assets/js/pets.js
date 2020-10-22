@@ -32,7 +32,9 @@ let burger = document.querySelector(".burger"),
 
 //------------------------------------------------------cloning JSON in pets = [] ----------
 	
-	pets = JSON.parse(JSON.stringify(jsonPets));
+
+		pets = JSON.parse(JSON.stringify(jsonPets));
+
 
 //----------------------------------------------event close mask + menu if rotate mobile device & width > 767
 
@@ -43,7 +45,7 @@ window.addEventListener('resize', function(event){
 	burger_menu.classList.remove("active");
 	burger.classList.remove("active");
 	body.classList.remove("active");
-	//popup.classList.remove("active");
+	popup.classList.remove("active");
   } 
   // if (petsBlock.offsetWidth !== petsBlockWidth) {
   // 	document.location.reload();
@@ -123,7 +125,19 @@ function getRandEigth (qty) {
 // формируем массив так, чтобы три первых цифры новой группы из 8 не были равны последним трем цифрам предыдущей группы
 while (multiRandom.length < 48) { 
 	getRandEigth(8);
-		if (arrRandomNum.slice(0,3) !== multiRandom.slice(-3)) {
+		if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[0])) {
+			arrRandomNum = [];
+		}
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[1])) {
+			arrRandomNum = [];
+		}
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[2])) {
+			arrRandomNum = [];
+		}
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[3])) {
+			arrRandomNum = [];
+		}
+		else {
 			multiRandom.push(...arrRandomNum);
 			arrRandomNum = [];
 	}

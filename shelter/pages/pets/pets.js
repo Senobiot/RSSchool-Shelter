@@ -45,7 +45,7 @@ window.addEventListener('resize', function(event){
 	burger_menu.classList.remove("active");
 	burger.classList.remove("active");
 	body.classList.remove("active");
-	//popup.classList.remove("active");
+	popup.classList.remove("active");
   } 
   // if (petsBlock.offsetWidth !== petsBlockWidth) {
   // 	document.location.reload();
@@ -125,13 +125,16 @@ function getRandEigth (qty) {
 // формируем массив так, чтобы три первых цифры новой группы из 8 не были равны последним трем цифрам предыдущей группы
 while (multiRandom.length < 48) { 
 	getRandEigth(8);
-		if (multiRandom.slice(-3).includes(arrRandomNum.slice(0,3)[0])) {
+		if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[0])) {
 			arrRandomNum = [];
 		}
-		else if (multiRandom.slice(-3).includes(arrRandomNum.slice(0,3)[1])) {
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[1])) {
 			arrRandomNum = [];
 		}
-		else if (multiRandom.slice(-3).includes(arrRandomNum.slice(0,3)[2])) {
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[2])) {
+			arrRandomNum = [];
+		}
+		else if (multiRandom.slice(-4).includes(arrRandomNum.slice(0,4)[3])) {
 			arrRandomNum = [];
 		}
 		else {
