@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Pets</title>
+	<title>Shelter Pets</title>
+	<link rel="icon" type="image/png" href="../../assets/images/fav_dog.png">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,24 +13,29 @@
 	<!-- ======================section pets-PAGE==================== -->
 
 	<header>
+		<div class="mask"></div>
 		<div class="wrapper">
 			<div class="logo">
 				<h1>Cozy House</h1>
 				<div class="logo_subtitle">Shelter for pets in Boston</div>
 			</div>
-			<nav>
+			<nav class="nav">
+				<div class="logo">
+					<h1>Cozy House</h1>
+					<div class="logo_subtitle">Shelter for pets in Boston</div>
+				</div>
 				<ul>
 					<li><a href="../main/index.html">About the shelter</a></li>
-					<li><a href="#"  class="nav_active">Our pets</a></li>
-					<li><a href="#">Help the shelter</a></li>
-					<li><a href="#">Contacts</a></li>
+					<li><a href="#" class="nav_current">Our pets</a></li>
+					<li><a href="#" class="disabled">Help the shelter</a></li>
+					<li><a href="#" class="disabled">Contacts</a></li>
 				</ul>
-				<div class="burger">
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
 			</nav>
+			<div class="burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</header>
 	<main class="pets-page" id="pets-page">
@@ -38,52 +44,67 @@
 			<div class="pets-page__content">
 				<div class="pets-page__content_pets">
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-katrine.png" alt="Katrine pic">
+						<img src="../../assets/images/katrine.png" alt="Katrine pic">
 						<div class="tile_title">Katrine</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-jennifer.png" alt="Jennifer pic">
+						<img src="../../assets/images/jennifer.png" alt="Jennifer pic">
 						<div class="tile_title">Jennifer</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-woody.png" alt="Woody pic">
+						<img src="../../assets/images/woody.png" alt="Woody pic">
 						<div class="tile_title">Woody</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-sophia.png" alt="Sophia pic">
+						<img src="../../assets/images/sophia.png" alt="Sophia pic">
 						<div class="tile_title">Sophia</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-timmy.png" alt="Timmy pic">
+						<img src="../../assets/images/timmy.png" alt="Timmy pic">
 						<div class="tile_title">Timmy</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-charly.png" alt="Charly pic">
+						<img src="../../assets/images/charly.png" alt="Charly pic">
 						<div class="tile_title">Charly</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-scarlet.png" alt="Scarlett pic">
+						<img src="../../assets/images/scarlett.png" alt="Scarlett pic">
 						<div class="tile_title">Scarlett</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 					<div class="pets__tile">
-						<img src="../../assets/images/pets_page-freddi.png" alt="Freddie pic">
+						<img src="../../assets/images/freddie.png" alt="Freddie pic">
 						<div class="tile_title">Freddie</div>
 						<div class="tile_button">Learn more</div>
 					</div>
 				</div>
 				<div class="pets-page__content_controls">
-					<button class="button" disabled><<</button>
-					<button class="button" disabled><</button>
-					<button class="button active">1</button>
-					<button class="button">></button>
-					<button class="button">>></button>
+					<button class="button firstPage" disabled><<</button>
+					<button class="button arrowL" disabled><</button>
+					<div class="currentPage">1</div>
+					<button class="button arrowR">></button>
+					<button class="button lastPage">>></button>
+				</div>
+			</div>
+		</div>
+		<div class="popup">
+			<div class="popup_close"></div>
+			<img src="../../assets/images/jennifer.png" alt="Katrin picture" class="popup_img">
+			<div class="popup__content">
+				<div class="popup__content_title"> </div>
+				<div class="popup__content_subtitle"> </div>
+				<div class="popup__content_description"> </div>
+				<div class="popup__content_attributes">
+					<p><span>Age: </span> </p>
+					<p><span>Inoculations: </span> a</p>
+					<p><span>Diseases: </span> </p>
+					<p><span>Parasites: </span> </p>
 				</div>
 			</div>
 		</div>
@@ -117,8 +138,8 @@
 			<div class="content_image"><img src="../../assets/images/footer-puppy.png" class="footer_img" alt="puppy"></div>
 		</div>
 	</footer>
-
 	<!-- =======================SCRIPTS============================== -->
-	<!-- <script src="../../../../assets/js/common.js"></script> -->
+	<script src="../../assets/js/pets.json"></script>
+	<script src="pets.js"></script>
 </body>
 </html>
